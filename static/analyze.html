@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Analyze — ResumeLens</title><link rel="stylesheet" href="/static/css/style.css"></head>
+<body>
+  <header class="topbar"><a class="brand" href="/">ResumeLens</a><nav class="nav"><a href="/static/analyze.html">Analyze</a><a href="/static/history.html">History</a><a href="#" id="logout">Log out</a></nav></header>
+  <main class="container stack">
+    <div><span class="eyebrow">Resume analysis</span><h1>Compare with a job</h1><p>Upload a text-based PDF and paste the job description.</p></div>
+    <section class="card stack">
+      <div id="error" class="notice" role="alert"></div>
+      <form id="analyze-form" class="stack">
+        <label>Resume PDF (up to 5 MB)<input name="resume" type="file" accept="application/pdf,.pdf" required></label>
+        <div class="grid">
+          <label>Job title<input name="job_title" maxlength="200" placeholder="e.g. Backend Engineer"></label>
+          <label>Compare with earlier analysis (optional)<input name="compare_with" type="number" min="1" placeholder="Analysis ID"></label>
+        </div>
+        <label>Job description<textarea name="job_description" required placeholder="Paste the job description here..."></textarea></label>
+        <button id="submit-button" type="submit">Analyze resume</button>
+      </form>
+    </section>
+    <section id="result" class="stack" aria-live="polite"></section>
+  </main>
+  <script src="/static/js/api.js"></script><script src="/static/js/app-shell.js"></script><script src="/static/js/analyze.js"></script>
+</body></html>
